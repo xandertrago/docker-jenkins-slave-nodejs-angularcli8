@@ -14,6 +14,7 @@ RUN apt-get update && \
 # Install JDK 8 (latest stable edition at 2019-04-01)
     apt-get install -qy default-jdk && \
 # Install NodeJS
+    curl -sL https://deb.nodesource.com/setup_12.x | bash && \
     apt-get install -qy nodejs && \
 # Install NPM
     apt-get install -qy npm && \
