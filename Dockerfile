@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:18.04
 MAINTAINER Szczepan Kozioł <szczepankoziol@gmail.com>
 
 # Make sure the package repository is up to date.
@@ -6,6 +6,7 @@ RUN apt-get update && \
     apt-get -qy full-upgrade && \
     apt-get install -qy git && \
     apt-get install -qy curl && \
+    apt-get install -qy apt-transport-https && \
     apt-get install -qy build-essential && \
 # Install a basic SSH server
     apt-get install -qy openssh-server && \
