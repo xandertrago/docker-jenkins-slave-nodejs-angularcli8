@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:19.04
 MAINTAINER Szczepan Kozioł <szczepankoziol@gmail.com>
 
 # Make sure the package repository is up to date.
