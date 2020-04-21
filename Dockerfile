@@ -10,11 +10,11 @@ RUN apt-get update && apt-get -qy full-upgrade && apt-get -qy install \
 # Install a basic SSH server
     openssh-server \
 # Install JDK
-    default-jdk \    
-RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd && \
-    mkdir -p /var/run/sshd
+    default-jdk && \    
+    sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd && \
+    mkdir -p /var/run/sshd && \
 # Install NodeJS
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash && \
     apt-get install -qy nodejs \
 # Install NPM
     npm && \
