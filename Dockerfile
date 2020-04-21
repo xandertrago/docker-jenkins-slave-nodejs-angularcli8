@@ -2,23 +2,22 @@ FROM ubuntu:18.04
 MAINTAINER Szczepan Kozioł <szczepankoziol@gmail.com>
 
 # Make sure the package repository is up to date.
-RUN apt-get update && \
-    apt-get -qy full-upgrade && \
-    apt-get install -qy git && \
-    apt-get install -qy curl && \
-    apt-get install -qy apt-transport-https && \
-    apt-get install -qy build-essential && \
+RUN apt-get update && apt-get -qy full-upgrade && apt-get -qy install \
+    git \
+    curl \
+    apt-transport-https \
+    build-essential \
 # Install a basic SSH server
-    apt-get install -qy openssh-server && \
-    sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd && \
-    mkdir -p /var/run/sshd && \
-# Install JDK 8 (latest stable edition at 2019-04-01)
-    apt-get install -qy default-jdk && \
+    openssh-server \
+# Install JDK
+    default-jdk \    
+RUN sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd && \
+    mkdir -p /var/run/sshd
 # Install NodeJS
-    curl -sL https://deb.nodesource.com/setup_12.x | bash && \
-    apt-get install -qy nodejs && \
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash && \
+    apt-get install -qy nodejs \
 # Install NPM
-    apt-get install -qy npm && \
+    npm && \
 # Install Angular CLI 8
     npm install -g @angular/cli@8 && \
 # Cleanup old packages
