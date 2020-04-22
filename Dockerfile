@@ -17,9 +17,10 @@ RUN apt-get update && apt-get -qy full-upgrade && apt-get -qy install \
     curl -sL https://deb.nodesource.com/setup_12.x | bash && \
     apt-get install -qy nodejs && \
 # Install Angular CLI 8
+    npm update && \
     npm install -g @angular/cli@8 && \
     npm install -g @angular-devkit/build-angular && \
-    npm update && \
+    npm install -g @angular/compiler-cli && \
 # Cleanup old packages
     apt-get -qy autoremove && \
 # Add user jenkins to the image
