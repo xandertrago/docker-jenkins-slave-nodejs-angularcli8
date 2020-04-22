@@ -19,6 +19,7 @@ RUN apt-get update && apt-get -qy full-upgrade && apt-get -qy install \
 # Install Angular CLI 8
     npm install -g @angular/cli@8 && \
     npm install -g @angular-devkit/build-angular && \
+    npm update && \
 # Cleanup old packages
     apt-get -qy autoremove && \
 # Add user jenkins to the image
