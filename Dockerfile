@@ -15,7 +15,8 @@ RUN apt-get update && apt-get -qy full-upgrade && apt-get -qy install \
     mkdir -p /var/run/sshd && \
 # Install NodeJS
     #curl -sL https://deb.nodesource.com/setup_12.x | bash && \
-    apt-get install -qy nodejs && \
+    apt-get install -qy nodejs \
+    npm && \
 # Install Angular CLI 8
     npm update && \
 # Cleanup old packages
