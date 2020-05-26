@@ -1,1 +1,1 @@
-# docker-jenkins-slave-nodejs-angularcli8
+# docker-jenkins-slave-nodejs12
