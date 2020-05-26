@@ -14,9 +14,8 @@ RUN apt-get update && apt-get -qy full-upgrade && apt-get -qy install \
     sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd && \
     mkdir -p /var/run/sshd && \
 # Install NodeJS
-    #curl -sL https://deb.nodesource.com/setup_12.x | bash && \
-    apt-get install -qy nodejs \
-    npm && \
+    curl -sL https://deb.nodesource.com/setup_12.x | bash && \
+    apt-get install -qy nodejs && \
 # Install Angular CLI 8
     npm update && \
 # Cleanup old packages
